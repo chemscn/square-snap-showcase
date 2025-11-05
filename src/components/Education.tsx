@@ -12,6 +12,7 @@ const education = [
     degree: "Bachelor of Science",
     institution: "University of Pittsburgh",
     year: "2017",
+    link: "https://www.pitt.edu/",
   },
 ];
 
