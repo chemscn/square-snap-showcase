@@ -17,6 +17,14 @@ const Navbar = () => {
     const handleScroll = () => {
       const sections = navItems.map(item => item.href.slice(1));
       const scrollPosition = window.scrollY + 100;
+      
+      // Check if we're near the bottom of the page
+      const isNearBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 50;
+      
+      if (isNearBottom) {
+        setActiveSection("education");
+        return;
+      }
 
       for (const section of sections) {
         const element = document.getElementById(section);
