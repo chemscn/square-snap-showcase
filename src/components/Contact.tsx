@@ -35,20 +35,32 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // TODO: Replace this with actual email sending logic
-      // This currently just logs the data - you need a backend solution
-      console.log("Form data:", data);
-      
+      const response = await fetch(
+        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-contact-email`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+
       toast({
-        title: "Form submitted!",
-        description: "This is a demo. Set up a backend to actually send emails.",
+        title: "Message sent!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
       });
       
       reset();
     } catch (error) {
+      console.error("Error sending message:", error);
       toast({
         title: "Error",
-        description: "Something went wrong. Please try again.",
+        description: "Failed to send message. Please try again or email me directly.",
         variant: "destructive",
       });
     } finally {
