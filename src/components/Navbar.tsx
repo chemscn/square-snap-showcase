@@ -7,7 +7,6 @@ const navItems = [
   { name: "Experience", href: "#experience" },
   { name: "Skills", href: "#skills" },
   { name: "Education", href: "#education" },
-  { name: "Contact", href: "#contact" },
 ];
 
 const Navbar = () => {
@@ -18,14 +17,6 @@ const Navbar = () => {
     const handleScroll = () => {
       const sections = navItems.map(item => item.href.slice(1));
       const scrollPosition = window.scrollY + 100;
-      
-      // Check if we're near the bottom of the page
-      const isNearBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 50;
-      
-      if (isNearBottom) {
-        setActiveSection("contact");
-        return;
-      }
 
       for (const section of sections) {
         const element = document.getElementById(section);
