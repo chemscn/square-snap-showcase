@@ -56,7 +56,7 @@ const handler = async (req: Request): Promise<Response> => {
       overflow: hidden;
     }
     .header {
-      background-color: #2563eb;
+      background-color: #33CCCC;
       color: #ffffff;
       padding: 20px;
       text-align: center;
@@ -69,7 +69,7 @@ const handler = async (req: Request): Promise<Response> => {
       padding: 20px;
     }
     .content h4 {
-      color: #2563eb;
+      color: #182236;
       font-size: 18px;
       margin-bottom: 10px;
     }
@@ -79,9 +79,9 @@ const handler = async (req: Request): Promise<Response> => {
       margin: 5px 0;
     }
     .message-box {
-      background-color: #f9fafb;
+      background-color: #F6F7F9;
       padding: 15px;
-      border-left: 4px solid #2563eb;
+      border-left: 4px solid #33CCCC;
       margin: 15px 0;
     }
     .footer {
